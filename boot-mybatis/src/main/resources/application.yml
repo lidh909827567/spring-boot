@@ -12,3 +12,9 @@ pagehelper:
 spring:
   profiles:
     active: @activatedProperties@
+logging:
+  config: classpath:logback-spring.xml
+
+
+
+

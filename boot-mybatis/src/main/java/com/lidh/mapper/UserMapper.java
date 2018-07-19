@@ -2,7 +2,6 @@ package com.lidh.mapper;
 
 import com.lidh.model.User;
 
-import java.util.List;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer userId);
