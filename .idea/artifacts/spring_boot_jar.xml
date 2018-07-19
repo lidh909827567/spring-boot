@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact name="spring-boot:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/spring_boot_jar</output-path>
+    <root id="root">
+      <element id="archive" name="spring-boot.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/boot-mybatis/src/main/resources/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
