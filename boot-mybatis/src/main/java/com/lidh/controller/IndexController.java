@@ -2,6 +2,7 @@ package com.lidh.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -27,6 +28,18 @@ public class IndexController {
 
         modelAndView.addObject("userList", userList);
         return modelAndView;
+    }
+
+    @RequestMapping("/mvc2")
+    @ResponseBody
+    public ModelAndView mvc2(){
+        ModelAndView mv = new ModelAndView("demo");
+        List<String> userList=new ArrayList<String>();
+        userList.add("admin");
+        userList.add("user1");
+        userList.add("user2");
+        mv.addObject("userList", userList);
+        return mv;
     }
 
 }
