@@ -2,6 +2,7 @@ mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.lidhk.model
 
+
 #pagehelper分页插件
 pagehelper:
     helperDialect: mysql
@@ -11,7 +12,7 @@ pagehelper:
 
 spring:
   profiles:
-    active: @activatedProperties@
+    active: dev
 logging:
   config: classpath:logback-spring.xml
 
