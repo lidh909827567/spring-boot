@@ -9,8 +9,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 /**
  * @author
  */
-@EnableTransactionManagement
+@EnableTransactionManagement(order = 2)
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+@MapperScan("com.lidh.mapper")
 public class BootMybatisApplication {
 
     public static void main(String[] args) {

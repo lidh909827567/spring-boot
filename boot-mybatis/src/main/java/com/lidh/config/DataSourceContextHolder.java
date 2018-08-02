@@ -12,7 +12,7 @@ public class DataSourceContextHolder {
 
     public static final Logger log = LoggerFactory.getLogger(DataSourceContextHolder.class);
 
-    public static final String DEFAULT_DS = "datasource1";
+    public static final String DEFAULT_DS = "db1";
 
     private static final ThreadLocal<String> contextHolder = new ThreadLocal<>();
 

@@ -19,6 +19,8 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
+
     @ResponseBody
     @RequestMapping(value = "/add", produces = {"application/json;charset=UTF-8"})
     public int addUser(User user) {

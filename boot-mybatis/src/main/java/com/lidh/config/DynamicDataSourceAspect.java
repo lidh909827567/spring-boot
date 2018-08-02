@@ -6,6 +6,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
+
 import java.lang.reflect.Method;
 
 
@@ -27,7 +28,7 @@ public class DynamicDataSourceAspect {
         //获得访问的方法名
         String methodName = point.getSignature().getName();
         //得到方法的参数的类型
-        Class[] argClass = ((MethodSignature)point.getSignature()).getParameterTypes();
+        Class[] argClass = ((MethodSignature) point.getSignature()).getParameterTypes();
         String dataSource = DataSourceContextHolder.DEFAULT_DS;
         try {
             // 得到访问的方法对象

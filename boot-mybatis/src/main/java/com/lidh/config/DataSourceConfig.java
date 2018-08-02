@@ -1,8 +1,5 @@
 package com.lidh.config;
 
-import com.alibaba.druid.pool.DruidDataSource;
-import org.mybatis.spring.SqlSessionFactoryBean;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
@@ -21,50 +18,24 @@ import java.util.Map;
 @Configuration
 public class DataSourceConfig {
 
-    @Value("${spring.datasource1.url}")
-    private String url1;
-
-    @Value("${spring.datasource1.username}")
-    private String username1;
-
-    @Value("${spring.datasource1.password}")
-    private String password1;
-
-
-    @Value("${spring.datasource2.url}")
-    private String url2;
-
-    @Value("${spring.datasource2.username}")
-    private String username2;
-
-    @Value("${spring.datasource2.password}")
-    private String password2;
-
-//    @Bean(name = "db1")
-//    @ConfigurationProperties(prefix = "spring.datasource.datasource1")
+    @Bean(name = "db1")
+    @Primary
+    @ConfigurationProperties(prefix = "spring.datasource.dsone")
     public DataSource dataSource1(){
-        DruidDataSource dataSource = new DruidDataSource();
-        dataSource.setUrl(url1);
-        dataSource.setUsername(username1);
-        dataSource.setPassword(password1);
-        return dataSource;
+        return DataSourceBuilder.create().build();
     }
 
-//    @Bean(name = "db2")
-//    @ConfigurationProperties(prefix = "spring.datasource.datasource2")
+    @Bean(name = "db2")
+    @ConfigurationProperties(prefix = "spring.datasource.dstwo")
     public DataSource dataSource2(){
-        DruidDataSource dataSource = new DruidDataSource();
-        dataSource.setUrl(url2);
-        dataSource.setUsername(username2);
-        dataSource.setPassword(password2);
-        return dataSource;
+        return DataSourceBuilder.create().build();
     }
     /**
      * 动态数据源: 通过AOP在不同数据源之间动态切换
      * @return
      */
     @Primary
-    @Bean
+    @Bean("dataSource")
     public DataSource dataSource() {
         DynamicDataSource dynamicDataSource = new DynamicDataSource();
         // 默认数据源
