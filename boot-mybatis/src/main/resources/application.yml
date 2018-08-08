@@ -16,7 +16,7 @@ spring:
   redis:
   ##Redis数据库索引（默认0）
     database: 0
-    host: 127.0.0.1
+    host: 192.168.8.117
     port: 6379
     jedis:
       pool:
@@ -29,7 +29,7 @@ spring:
         ###连接池最小空闲连接
         min-idle: 0
     timeout: 1000
-    password: root
+    password:
 logging:
   config: classpath:logback-spring.xml
 

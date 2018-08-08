@@ -1,18 +1,14 @@
 package com.lidh.service.impl;
 
-import com.alibaba.fastjson.JSON;
 import com.lidh.config.DS;
 import com.lidh.mapper.UserMapper;
 import com.lidh.model.User;
 import com.lidh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
-
-import java.io.Serializable;
 
 /**
  * Created by lidhk on 2018/7/4.
