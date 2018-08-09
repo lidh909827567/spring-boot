@@ -5,13 +5,13 @@ server:
 spring:
     datasource:
        dsone:
-          jdbcUrl: jdbc:mysql://192.168.8.117:3306/mytest?useUnicode=true&characterEncoding=utf-8&useSSL=true&verifyServerCertificate=false
+          jdbcUrl: jdbc:mysql://192.168.8.117:3306/mytest?useUnicode=true&characterEncoding=utf-8&useSSL=false
           username: root
           password: 123456
           type: com.alibaba.druid.pool.DruidDataSource
           driverClassName: com.mysql.jdbc.Driver
        dstwo:
-          jdbcUrl: jdbc:mysql://192.168.8.117:3306/mytest1?useUnicode=true&characterEncoding=utf-8&useSSL=true&verifyServerCertificate=false
+          jdbcUrl: jdbc:mysql://192.168.8.117:3306/mytest1?useUnicode=true&characterEncoding=utf-8&useSSL=false
           username: root
           password: 123456
           # 使用druid数据源

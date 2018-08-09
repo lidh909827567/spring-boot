@@ -183,6 +183,11 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.47</version>
         </dependency>
+        <!-- 整合rabbitmq -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
     </dependencies>
 
     <profiles>
@@ -244,7 +249,8 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.5.2.RELEASE</version>
                 <configuration>
-                    <mainClass>com.lidh.BootMybatisApplication</mainClass><!--springboot启动类目录-->
+                    <!--springboot启动类目录-->
+                    <mainClass>com.lidh.BootMybatisApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

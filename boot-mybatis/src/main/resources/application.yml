@@ -30,6 +30,13 @@ spring:
         min-idle: 0
     timeout: 1000
     password:
+  rabbitmq:
+    host: 192.168.8.117
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+    virtual-host: /
 logging:
   config: classpath:logback-spring.xml
 
