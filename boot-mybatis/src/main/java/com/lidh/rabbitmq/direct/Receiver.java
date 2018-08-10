@@ -1,5 +1,6 @@
-package com.lidh.rabbitmq;
+package com.lidh.rabbitmq.direct;
 
+import com.lidh.model.User;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
@@ -15,10 +16,11 @@ import org.springframework.stereotype.Component;
  * 所以，该消费者实现了对rabbitmq_test队列的消费，消费操作为输出消息的字符串内容。
  */
 @Component
-@RabbitListener(queues = "rabbitmq_test")
 public class Receiver {
+
     @RabbitHandler
-    public void process(String  rabbitmq_test){
-        System.out.println("Receiver"+ "  " + rabbitmq_test);
+    @RabbitListener(queues = "rabbitmq_test")
+    public void process(User user) {
+        System.out.println("Receiver" + "  " + user);
     }
 }

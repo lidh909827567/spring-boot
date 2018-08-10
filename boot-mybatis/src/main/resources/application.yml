@@ -37,6 +37,8 @@ spring:
     password: guest
     publisher-confirms: true
     virtual-host: /
+    constomers: 5
+    max-constomers: 20
 logging:
   config: classpath:logback-spring.xml
 

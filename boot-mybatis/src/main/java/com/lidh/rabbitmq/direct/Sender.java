@@ -1,5 +1,6 @@
-package com.lidh.rabbitmq;
+package com.lidh.rabbitmq.direct;
 
+import com.lidh.model.User;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -23,8 +24,12 @@ public class Sender {
     private AmqpTemplate amqpTemplate;
 
     public void send(){
-        String context = "rabbitmq_test" +"  " + new Date();
-        System.out.println("send:" + context);
-        this.amqpTemplate.convertAndSend("rabbitmq_test",context);
+        User user = new User();
+        user.setUserId(1);
+        user.setPassword("1");
+        user.setPhone("1");
+        user.setUserName("1");
+        System.out.println("send:" + user);
+        this.amqpTemplate.convertAndSend("rabbitmq_test",user);
     }
 }
