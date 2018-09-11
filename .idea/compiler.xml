@@ -7,10 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="boot-mybatis" />
+        <module name="dubbo-consumer" />
+        <module name="dubbo-provider" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="boot-mybatis" target="1.8" />
+      <module name="dubbo-consumer" target="1.8" />
+      <module name="dubbo-producer" target="1.8" />
+      <module name="dubbo-provider" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
